@@ -24,12 +24,17 @@ const seachCep = async ()=>{
 }
 
 const cepAtt = ()=>{
-    
         seachCep()
-    
-
 }
 
-btn.addEventListener("click",cepAtt)
+inpCEP.addEventListener("input",()=>{
+    if(inpCEP.value.length <= 0){
+        estado.value = "";
+        rua.value = "";
+        cidade.value = "";
+    }else if(inpCEP.value.length == 8){
+        cepAtt()
+    }
+})
 
 
